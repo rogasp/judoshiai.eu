@@ -14,3 +14,4 @@ If you are interested in becoming a sponsor, please visit the Laravel [Patreon p
 
 ## License
 [MIT](https://github.com/rogasp/judoshiai.eu/blob/master/LICENSE)
+
