@@ -6,7 +6,7 @@ Can be used for registration of competitions, contestants, live results, live st
 
 Everyone is welcome to contribute and above all learn more about PHP, Laravel, MySql, Github etc.
 
-For more information please visit the [Wiki](https://github.com/rogasp/judoshiai.eu.wiki.git) or contact roger.aspelin@hotmail.se
+For more information please visit the [Wiki](https://github.com/rogasp/judoshiai.eu/wiki) or contact roger.aspelin@hotmail.se
 
 ## JudoShiai.EU Sponsors
 
