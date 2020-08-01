@@ -1,5 +1,5 @@
-<nav class="navbar navbar-expand-md navbar-dark bg-dark shadow-sm fixed-top">
-            <div class="container">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+            <div class="container-fluid">
                 <a class="navbar-brand" href="{{ url('/') }}">
 {{ config('app.name', 'Laravel') }}
 </a>
