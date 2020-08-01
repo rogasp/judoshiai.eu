@@ -35,4 +35,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function clubs()
+    {
+        return $this->hasMany(Club::class, 'user_id');
+    }
+
+    public function ownedClubs()
+    {
+        return $this->hasMany(Club::class, 'owner_id');
+    }
 }
