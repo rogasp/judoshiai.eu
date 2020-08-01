@@ -43,7 +43,6 @@ class User extends Authenticatable
 
     public function ownedClubs()
     {
-        return $this->hasMany(Club::class,'owner_id');
-
+        return $this->hasMany(Club::class, 'owner_id');
     }
 }
