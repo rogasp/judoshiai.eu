@@ -6,8 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Club extends Model
 {
-    //TODO:
-
+    /**
+     * The attributes that are mass assignable.
+     *
+     * @var array
+     */
     protected $fillable = [
         'name',
         'phone',

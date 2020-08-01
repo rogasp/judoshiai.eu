@@ -13,6 +13,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resource('clubs', 'ClubController');
+
 Route::get('/', function () {
     return view('welcome');
 });
