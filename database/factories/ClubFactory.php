@@ -3,6 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Club;
+use App\Http\Utilities\Country as Country;
 use Faker\Generator as Faker;
 
 /*
@@ -21,7 +22,9 @@ $factory->define(Club::class, function (Faker $faker) {
         'name'              => $faker->unique()->company,
         'email'             => $faker->safeEmail,
         'phone'             => $faker->phoneNumber,
-        'country'           => $faker->countryCode,
+        'country_code'      => $faker->randomElement(array_keys(Country::all())),
+        'approved_at'       => now(),
+        'activated_at'      => now(),
         'user_id'           =>factory(App\User::class),
         'owner_id'          =>factory(App\User::class),
     ];

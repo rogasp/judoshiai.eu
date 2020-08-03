@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Utilities\Country as Country;
 
 class Club extends Model
 {
@@ -11,14 +12,32 @@ class Club extends Model
      *
      * @var array
      */
+
+    protected $table = 'clubs';
+
     protected $fillable = [
         'name',
         'phone',
         'email',
-        'country',
+        'country_code',
         'user_id',
         'owner_id',
+        'administrator_id',
     ];
+
+    protected $with = [
+        //
+    ];
+
+    protected $dates = [
+        'approved_at',
+        'activated_at',
+    ];
+
+    public function country_name()
+    {
+        return Country::get($this->country_code);
+    }
 
     public function user()
     {
@@ -28,5 +47,10 @@ class Club extends Model
     public function owner()
     {
         return $this->belongsTo(User::class, 'owner_id');
+    }
+
+    public function administrators()
+    {
+        return $this->belongsToMany(User::class)->withTimestamps();;
     }
 }
