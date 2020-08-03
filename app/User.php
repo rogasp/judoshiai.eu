@@ -52,7 +52,7 @@ class User extends Authenticatable
 
     public function adminClubs()
     {
-        return $this->belongsToMany(Club::class)->withTimestamps();;
+        return $this->belongsToMany(Club::class)->withTimestamps();
     }
 
     public function isAdmin()
