@@ -2,8 +2,8 @@
 
 namespace App;
 
-use Illuminate\Database\Eloquent\Model;
 use App\Http\Utilities\Country as Country;
+use Illuminate\Database\Eloquent\Model;
 
 class Club extends Model
 {
@@ -12,7 +12,6 @@ class Club extends Model
      *
      * @var array
      */
-
     protected $table = 'clubs';
 
     protected $fillable = [
@@ -51,6 +50,6 @@ class Club extends Model
 
     public function administrators()
     {
-        return $this->belongsToMany(User::class)->withTimestamps();;
+        return $this->belongsToMany(User::class)->withTimestamps();
     }
 }

@@ -14,7 +14,7 @@ class CreateClubUserTable extends Migration
     public function up()
     {
         Schema::create('club_user', function (Blueprint $table) {
-            $table->primary(['club_id', 'user_id']);;
+            $table->primary(['club_id', 'user_id']);
             $table->unsignedBigInteger('club_id');
             $table->unsignedBigInteger('user_id');
             $table->timestamps();
