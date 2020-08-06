@@ -4,7 +4,6 @@ namespace App\Http\Controllers\Panel;
 
 use App\Club;
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 
 class ClubController extends Controller
 {
@@ -17,5 +16,4 @@ class ClubController extends Controller
                 'clubs' => $clubs,
             ]);
     }
-
 }
