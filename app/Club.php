@@ -4,6 +4,7 @@ namespace App;
 
 use App\Http\Utilities\Country as Country;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Club extends Model
 {
@@ -51,5 +52,42 @@ class Club extends Model
     public function administrators()
     {
         return $this->belongsToMany(User::class)->withTimestamps();
+    }
+
+    public function scopeInvolved($query)
+    {
+        $id = 0;
+
+        if (Auth::user()) {
+            $id = Auth::id();
+        }
+
+        $query
+            ->where('owner_id',$id)
+            ->orWhereHas('administrators', function($q) use ($id){
+                $q->where('user_id',$id);});
+
+        return $query;
+    }
+
+    public function is_owner()
+    {
+        if(Auth::user()){
+            if($this->owner_id==Auth::user()->id) {
+                return true;
+            }
+        }
+
+        return false;
+    }
+
+    public function is_admin()
+    {
+        if(Auth::user()){
+            if(!Auth::user()->adminClubs()->wherePivot('club_id', $this->id)->get()->isEmpty()){
+                return true;
+            }
+        }
+        return false;
     }
 }
