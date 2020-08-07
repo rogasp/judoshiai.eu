@@ -63,17 +63,18 @@ class Club extends Model
         }
 
         $query
-            ->where('owner_id',$id)
-            ->orWhereHas('administrators', function($q) use ($id){
-                $q->where('user_id',$id);});
+            ->where('owner_id', $id)
+            ->orWhereHas('administrators', function ($q) use ($id) {
+                $q->where('user_id', $id);
+            });
 
         return $query;
     }
 
     public function is_owner()
     {
-        if(Auth::user()){
-            if($this->owner_id==Auth::user()->id) {
+        if (Auth::user()) {
+            if ($this->owner_id == Auth::user()->id) {
                 return true;
             }
         }
@@ -83,11 +84,12 @@ class Club extends Model
 
     public function is_admin()
     {
-        if(Auth::user()){
-            if(!Auth::user()->adminClubs()->wherePivot('club_id', $this->id)->get()->isEmpty()){
+        if (Auth::user()) {
+            if (! Auth::user()->adminClubs()->wherePivot('club_id', $this->id)->get()->isEmpty()) {
                 return true;
             }
         }
+
         return false;
     }
 }
