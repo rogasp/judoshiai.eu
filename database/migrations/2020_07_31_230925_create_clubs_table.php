@@ -20,8 +20,8 @@ class CreateClubsTable extends Migration
             $table->string('email', 255)->nullable()->default(null);
             $table->string('city', 100)->nullable()->default(null);
             $table->string('country_code', 2)->nullable()->default(null);
-            $table->dateTime('approved_at')->default(null);
-            $table->dateTime('activated_at')->default(null);
+            $table->dateTime('approved_at')->nullable()->default(null);
+            $table->dateTime('activated_at')->nullable()->default(null);
             $table->bigInteger('user_id')->unsigned()->nullable();
             $table->bigInteger('owner_id')->unsigned()->nullable();
             $table->timestamps();
