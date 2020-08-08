@@ -11,6 +11,7 @@
             </div>
             <div class="col-md-6">
                 <p class="card-text">Owner: {{ $club->owner->name }}</p>
+                <p class="card-text">Status: </p>
                 <p class="card-text">{{ $club->is_activated() ? "Activated {$club->activated_at}" : 'Not activated yet' }}</p>
                 <p class="card-text">{{ $club->is_approved() ? "Approved {$club->approved_at}" : 'Not approved yet' }}</p>
             </div>
