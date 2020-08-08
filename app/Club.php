@@ -104,4 +104,9 @@ class Club extends Model
         return $this->approved_at != null
             && $this->approved_at->lessThanOrEqualTo(now());
     }
+
+    public function status()
+    {
+        //
+    }
 }
