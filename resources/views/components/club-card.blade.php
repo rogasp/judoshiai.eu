@@ -29,7 +29,8 @@
             </div>
         </div>
         <div class="card-footer">
-            <p class="card-text"><small class="text-muted">Last updated {{ $club->updated_at->diffForHumans() }}</small></p>
+            <p class="card-text"><small class="text-muted">Created by ({{ $club->user->id }}) {{ $club->owner->name}}
+                    at {{ $club->created_at }} and last updated {{ $club->updated_at->diffForHumans() }}</small></p>
         </div>
     </div>
 </div>
