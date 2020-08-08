@@ -1,0 +1,50 @@
+@extends('layouts.app')
+@inject('countries','App\Http\Utilities\Country')
+@section('content')
+    <h1>Create a club</h1>
+    <form method="POST" action="{{ route('clubs.store') }}">
+        @csrf
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-row">
+                    <label for="name">Name</label>
+                    <input id="name" class="form-control" type="text" name="name" value="{{ old('name') }}" required>
+                </div>
+                <div class="form-row">
+                    <label for="city">City</label>
+                    <input id="city" class="form-control" type="text" name="city" value="{{ old('city') }}">
+                </div>
+                <div class="form-row">
+                    <label for="country">Country</label>
+                    <select id="country" class="custom-select" name="country_code">
+                        <option value="" selected>Select...</option>
+                        @foreach($countries::all() as $code => $country)
+                            <option value="{{ $code }}">{{ $country }}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="form-row">
+                    <label for="phone">Phone</label>
+                    <input id="phone" class="form-control" type="text" name="phone" value="{{ old('phone') }}">
+                </div>
+                <div class="form-row">
+                    <label for="email">E-Mail</label>
+                    <input id="email" class="form-control" type="text" name="email" value="{{ old('email') }}">
+                </div>
+                <div class="form-row">
+                    <label for="owner">Owner</label>
+                    <input id="owner" class="form-control" type="text" value="{{ Auth::user()->name }}" disabled>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-row">
+                    <button class="btn btn-primary btn-lg mt-3" type="submit">Create club</button>
+                </div>
+            </div>
+        </div>
+    </form>
+@endsection
