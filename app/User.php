@@ -36,6 +36,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
+    protected $dates = [
+        'admin_since',
+    ];
+
     public function clubs()
     {
         return $this->hasMany(Club::class, 'user_id');
@@ -44,5 +48,16 @@ class User extends Authenticatable
     public function ownedClubs()
     {
         return $this->hasMany(Club::class, 'owner_id');
+    }
+
+    public function adminClubs()
+    {
+        return $this->belongsToMany(Club::class)->withTimestamps();
+    }
+
+    public function isAdmin()
+    {
+        return $this->admin_since != null
+            && $this->admin_since->lessThanOrEqualTo(now());
     }
 }

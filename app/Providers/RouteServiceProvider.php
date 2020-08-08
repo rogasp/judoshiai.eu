@@ -46,6 +46,8 @@ class RouteServiceProvider extends ServiceProvider
 
         $this->mapWebRoutes();
 
+        $this->mapPanelRoutes();
+
         //
     }
 
@@ -61,6 +63,19 @@ class RouteServiceProvider extends ServiceProvider
         Route::middleware('web')
             ->namespace($this->namespace)
             ->group(base_path('routes/web.php'));
+    }
+
+    /**
+     * Define the "user panel" routes for the application.
+     *
+     * @return void
+     */
+    protected function mapPanelRoutes()
+    {
+        Route::prefix('panel')
+            ->middleware('web')
+            ->namespace("{$this->namespace}\Panel")
+            ->group(base_path('routes/panel.php'));
     }
 
     /**

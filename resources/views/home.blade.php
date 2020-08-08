@@ -15,6 +15,11 @@
                     @endif
 
                     {{ __('You are logged in!') }}
+                        <div class="list-group">
+                            <a class="list-group-item" href="{{ route('clubs.index') }}">
+                                Manage Clubs
+                            </a>
+                        </div>
                 </div>
             </div>
         </div>
