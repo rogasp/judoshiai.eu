@@ -5,7 +5,7 @@
 <!-- $countries::all() -->
 @section('content')
     <h1>List of clubs you are involved with</h1>
-    <a class="btn btn-success mb-3" href="#">Create</a>
+    <a class="btn btn-success mb-3" href="{{ route('clubs.create') }}">Create</a>
     @empty($clubs)
         <div class="alert alert-warning">
             The list of clubs is empty
