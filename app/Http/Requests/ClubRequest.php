@@ -17,6 +17,7 @@ class ClubRequest extends FormRequest
     }
 
     //TODO: change rule for country_code to only accept vale in App\Http\Utilities\Country
+
     /**
      * Get the validation rules that apply to the request.
      *
@@ -25,11 +26,11 @@ class ClubRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'=>['required','unique:clubs','max:255'],
+            'name'=>['required', 'unique:clubs', 'max:255'],
             'phone'=>['max:50'],
             'email'=>['max:255'],
             'city'=>['max:100'],
-            'country_code'=>['max:2']
+            'country_code'=>['max:2'],
         ];
     }
 }
