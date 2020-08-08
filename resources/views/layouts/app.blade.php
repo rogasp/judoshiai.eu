@@ -20,15 +20,16 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
 <body>
-    <div id="app">
-        <!-- Navbar -->
-        @include('partials._navbar')
-        <!-- End of navbar -->
-        <main class="py-4">
-            <div class="container-fluid">
-                @yield('content')
-            </div>
-        </main>
+<div id="app">
+    <!-- Navbar -->
+    @include('partials._navbar')
+    <!-- End of navbar -->
+    <div class="container overflow-auto" style="margin-top:60px; margin-bottom:50px;">
+        @yield('content')
     </div>
+    <!-- Footer -->
+    @include('partials._footer')
+    <!-- End of footer -->
+</div>
 </body>
 </html>
