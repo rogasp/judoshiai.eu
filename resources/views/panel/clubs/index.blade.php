@@ -27,7 +27,7 @@
                         <tr>
                             <td>{{ $club->id }}</td>
                             <td>{{ $club->name }}</td>
-                            <td></td>
+                            <td>{{ $club->city }}</td>
                             <td>{{ $countries::get($club->country_code) }}</td>
                             <td>
                                 @if ($club->is_owner())
@@ -42,7 +42,8 @@
                             </td>
                             <td></td>
                             <td>
-                                <a class="btn btn-link" href="#">Show</a>
+                                <a class="btn btn-link" href="{{ route('clubs.show',
+                                    ['club' => $club->id]) }}">Show</a>
                                 <a class="btn btn-link" href="#">Edit</a>
                                 <form class="d-inline" method="POST" action="#">
                                     @csrf

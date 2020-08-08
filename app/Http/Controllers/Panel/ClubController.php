@@ -16,4 +16,12 @@ class ClubController extends Controller
                 'clubs' => $clubs,
             ]);
     }
+
+    public function show(Club $club)
+    {
+        return view('panel.clubs.show')
+            ->with([
+                'club' => $club,
+            ]);
+    }
 }

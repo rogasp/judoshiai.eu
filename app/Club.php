@@ -92,4 +92,16 @@ class Club extends Model
 
         return false;
     }
+
+    public function is_activated()
+    {
+        return $this->activated_at != null
+            && $this->activated_at->lessThanOrEqualTo(now());
+    }
+
+    public function is_approved()
+    {
+        return $this->approved_at != null
+            && $this->approved_at->lessThanOrEqualTo(now());
+    }
 }

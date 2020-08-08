@@ -22,6 +22,7 @@ $factory->define(Club::class, function (Faker $faker) {
         'name'              => $faker->unique()->company,
         'email'             => $faker->safeEmail,
         'phone'             => $faker->phoneNumber,
+        'city'              => $faker->city,
         'country_code'      => $faker->randomElement(array_keys(Country::all())),
         'approved_at'       => now(),
         'activated_at'      => now(),

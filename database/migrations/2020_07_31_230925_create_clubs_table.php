@@ -18,6 +18,7 @@ class CreateClubsTable extends Migration
             $table->string('name', 255)->unique();
             $table->string('phone', 50)->nullable()->default(null);
             $table->string('email', 255)->nullable()->default(null);
+            $table->string('city', 100)->nullable()->default(null);
             $table->string('country_code', 2)->nullable()->default(null);
             $table->dateTime('approved_at')->default(null);
             $table->dateTime('activated_at')->default(null);
