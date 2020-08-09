@@ -3,10 +3,7 @@
 namespace Tests\Feature;
 
 use App\User;
-use App\Club;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class ClubTest extends TestCase
@@ -24,7 +21,7 @@ class ClubTest extends TestCase
 
         $users = User::all();
 
-        $this->assertCount(1,$users);
+        $this->assertCount(1, $users);
 
         $response = $this->get('/');
 
