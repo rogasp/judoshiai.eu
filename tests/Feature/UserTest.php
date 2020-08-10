@@ -4,7 +4,6 @@ namespace Tests\Feature;
 
 use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
-use Illuminate\Foundation\Testing\WithFaker;
 use Tests\TestCase;
 
 class UserTest extends TestCase
@@ -19,7 +18,7 @@ class UserTest extends TestCase
         factory(User::class)
             ->create([
                 'admin_since' => null,
-                ]);
+            ]);
 
         $user = User::find(1);
         $this->assertNotTrue($user->isAdmin());
@@ -27,6 +26,5 @@ class UserTest extends TestCase
         $user->admin_since = now();
         $user->save();
         $this->assertTrue($user->isAdmin());
-
     }
 }

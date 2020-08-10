@@ -21,6 +21,6 @@ class ClubTest extends TestCase
             ]);
 
         $club = Club::find(1);
-        $this->assertEquals('Sweden',$club->country_name());
+        $this->assertEquals('Sweden', $club->country_name());
     }
 }
