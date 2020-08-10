@@ -1,13 +1,12 @@
 branches:
   only:
-  - master
-  - Club-changes
-
+    - master
+    - Club-changes
 dist: bionic
 language: php
 php:
   - 7.4
- 
+
 cache:
   directories:
     - node_modules

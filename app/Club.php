@@ -19,6 +19,7 @@ class Club extends Model
         'name',
         'phone',
         'email',
+        'city',
         'country_code',
         'user_id',
         'owner_id',

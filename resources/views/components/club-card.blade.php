@@ -11,6 +11,7 @@
             </div>
             <div class="col-md-6">
                 <p class="card-text">Owner: {{ $club->owner->name }}</p>
+                <p class="card-text">Status: </p>
                 <p class="card-text">{{ $club->is_activated() ? "Activated {$club->activated_at}" : 'Not activated yet' }}</p>
                 <p class="card-text">{{ $club->is_approved() ? "Approved {$club->approved_at}" : 'Not approved yet' }}</p>
             </div>
@@ -28,7 +29,8 @@
             </div>
         </div>
         <div class="card-footer">
-            <p class="card-text"><small class="text-muted">Last updated {{ $club->updated_at->diffForHumans() }}</small></p>
+            <p class="card-text"><small class="text-muted">Created by ({{ $club->user->id }}) {{ $club->owner->name}}
+                    at {{ $club->created_at }} and last updated {{ $club->updated_at->diffForHumans() }}</small></p>
         </div>
     </div>
 </div>
