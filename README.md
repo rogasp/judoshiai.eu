@@ -1,4 +1,4 @@
-# judoshiai.eu [![StyleCI](https://github.styleci.io/repos/282250229/shield?branch=master)](https://github.styleci.io/repos/282250229?branch=master) [![Build Status](https://travis-ci.com/rogasp/judoshiai.eu.svg?branch=master)](https://travis-ci.com/rogasp/judoshiai.eu) [![GitHub issues open](https://img.shields.io/github/issues/rogasp/judoshiai.eu.svg?maxAge=100)](https://github.com/rogasp/judoshiai.eu/issues)
+# judoshiai.eu [![StyleCI](https://github.styleci.io/repos/282250229/shield?branch=master)](https://github.styleci.io/repos/282250229?branch=master) [![Build Status](https://travis-ci.com/rogasp/judoshiai.eu.svg?branch=master)](https://travis-ci.com/rogasp/judoshiai.eu)
 
 The idea of this project is to develop a platform for managing competition activities for, primarily Judo competitions.
 
