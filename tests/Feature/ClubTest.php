@@ -23,4 +23,9 @@ class ClubTest extends TestCase
         $club = Club::find(1);
         $this->assertEquals('Sweden', $club->country_name());
     }
+
+    public function get_is_club_activated()
+    {
+        //
+    }
 }
