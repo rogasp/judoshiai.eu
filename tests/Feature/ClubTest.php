@@ -42,8 +42,6 @@ class ClubTest extends TestCase
         $club->save();
 
         $this->assertTrue($club->is_activated());
-
-
     }
 
     /**
@@ -63,7 +61,6 @@ class ClubTest extends TestCase
         $club->save();
 
         $this->assertTrue($club->is_approved());
-
     }
 
     /**
@@ -82,6 +79,5 @@ class ClubTest extends TestCase
         $this->actingAs($user);
 
         $this->assertTrue($club->is_owner());
-
     }
 }
