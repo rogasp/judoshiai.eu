@@ -2,7 +2,7 @@
 
 namespace Tests\Feature;
 
-use App\User;
+use App\Club;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -11,44 +11,16 @@ class ClubTest extends TestCase
     use RefreshDatabase;
 
     /**
-     * A basic feature test example.
-     *
-     * @return void
-     */
-    public function Example()
-    {
-        factory(User::class)->create();
-
-        $users = User::all();
-
-        $this->assertCount(1, $users);
-
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
-    }
-
-    /**
      * @test
      */
-    public function check_if_user_is_admin()
+    public function get_country_name_for_club()
     {
-        factory(User::class)->create();
+        factory(Club::class)
+            ->create([
+                'country_code' => 'se',
+            ]);
 
-        $user = User::find(1);
-
-        $user->admin_since = now();
-        $user->save();
-
-        $this->assertTrue($user->isAdmin());
-
-        $user->admin_since = null;
-        $user->save();
-
-        $this->assertNotTrue($user->isAdmin());
-
-        $response = $this->get('/');
-
-        $response->assertStatus(200);
+        $club = Club::find(1);
+        $this->assertEquals('Sweden',$club->country_name());
     }
 }
