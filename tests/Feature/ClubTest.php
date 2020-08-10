@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use App\Club;
+use App\User;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 use Tests\TestCase;
 
@@ -24,8 +25,63 @@ class ClubTest extends TestCase
         $this->assertEquals('Sweden', $club->country_name());
     }
 
-    public function get_is_club_activated()
+    /**
+     * @test
+     */
+    public function is_club_activated()
     {
-        //
+        factory(Club::class)
+            ->create([
+                'activated_at' => null,
+            ]);
+
+        $club = Club::find(1);
+        $this->assertNotTrue($club->is_activated());
+
+        $club->activated_at = now();
+        $club->save();
+
+        $this->assertTrue($club->is_activated());
+
+
+    }
+
+    /**
+     * @test
+     */
+    public function is_club_approved()
+    {
+        factory(Club::class)
+            ->create([
+                'approved_at' => null,
+            ]);
+
+        $club = Club::find(1);
+        $this->assertNotTrue($club->is_approved());
+
+        $club->approved_at = now();
+        $club->save();
+
+        $this->assertTrue($club->is_approved());
+
+    }
+
+    /**
+     * @test
+     */
+    public function check_if_authenticated_user_is_owner()
+    {
+        factory(Club::class)
+            ->create([
+                'approved_at' => null,
+            ]);
+
+        $club = Club::find(1);
+
+        $user = User::find(2);
+        $this->actingAs($user);
+
+        $this->assertTrue($club->is_owner());
+
     }
 }
