@@ -116,7 +116,7 @@ class ClubTest extends TestCase
 
         $clubs = Club::involved()->get();
 
-        $this->assertEquals($club->id,$clubs->first()->id);
+        $this->assertEquals($club->id, $clubs->first()->id);
     }
 
     /**
@@ -136,7 +136,7 @@ class ClubTest extends TestCase
 
         $clubs = Club::involved()->get();
 
-        $this->assertEquals($club->id,$clubs->first()->id);
+        $this->assertEquals($club->id, $clubs->first()->id);
     }
 
     /**
@@ -152,7 +152,7 @@ class ClubTest extends TestCase
 
         $club2 = factory(Club::class)
             ->create([
-                'owner_id' => $user->id
+                'owner_id' => $user->id,
             ]);
 
         $this->actingAs($user);
@@ -162,7 +162,6 @@ class ClubTest extends TestCase
         $clubs = Club::involved()->get();
 
         $this->assertEquals(2, $clubs->count());
-
     }
 
     /**
@@ -178,7 +177,7 @@ class ClubTest extends TestCase
 
         $club2 = factory(Club::class)
             ->create([
-                'owner_id' => $user->id
+                'owner_id' => $user->id,
             ]);
 
         $this->actingAs($user);
@@ -216,6 +215,4 @@ class ClubTest extends TestCase
 
         $this->assertEquals(0, $clubs->count());
     }
-
-
 }
