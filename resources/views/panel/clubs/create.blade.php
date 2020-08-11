@@ -2,6 +2,15 @@
 @inject('countries','App\Http\Utilities\Country')
 @section('content')
     <h1>Create a club</h1>
+    @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <form method="POST" action="{{ route('clubs.store') }}">
         @csrf
         <div class="row">
@@ -19,7 +28,7 @@
                     <select id="country" class="custom-select" name="country_code">
                         <option value="" selected>Select...</option>
                         @foreach($countries::all() as $code => $country)
-                            <option value="{{ $code }}">{{ $country }}</option>
+                            <option value="{{ $code }}" {{ old('country_code') == $code ? 'selected' : '' }}>{{ $country }}</option>
                         @endforeach
                     </select>
                 </div>
