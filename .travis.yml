@@ -6,6 +6,9 @@ dist: bionic
 language: php
 php:
   - 7.4
+addons:
+  hosts:
+    - judoshiai.test
 
 cache:
   directories:
