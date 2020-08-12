@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Panel;
 use App\Club;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\ClubRequest;
+use App\Http\Requests\ProductRequest;
+use App\Product;
 use Illuminate\Support\Facades\Auth;
 
 class ClubController extends Controller
@@ -40,6 +42,24 @@ class ClubController extends Controller
     public function show(Club $club)
     {
         return view('panel.clubs.show')
+            ->with([
+                'club' => $club,
+            ]);
+    }
+
+    public function update(ClubRequest $request, Club $club)
+    {
+
+        $club->update($request->validated());
+
+        return redirect()
+            ->route('clubs.index')
+            ->withSuccess("Club with id {$club->id} was updated");
+    }
+
+    public function edit(Club $club)
+    {
+        return view('panel.clubs.edit')
             ->with([
                 'club' => $club,
             ]);
