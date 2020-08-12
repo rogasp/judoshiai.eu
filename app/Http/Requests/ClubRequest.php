@@ -25,8 +25,7 @@ class ClubRequest extends FormRequest
      */
     public function rules()
     {
-        switch ($this->method())
-        {
+        switch ($this->method()) {
             case 'POST':
                 return[
                     'name' => 'required|max:255|unique:clubs,name',
@@ -39,7 +38,7 @@ class ClubRequest extends FormRequest
             case 'PATCH':
             case 'PUT':
                 return [
-                    'name' => 'required|max:255|unique:clubs,name,' .$this->club->id,
+                    'name' => 'required|max:255|unique:clubs,name,'.$this->club->id,
                     'phone' => 'max:50',
                     'email' => 'max:100',
                     'city' => 'max:100',
@@ -47,7 +46,6 @@ class ClubRequest extends FormRequest
                 ];
             break;
         }
-
 
 //        return [
 //            'name'=>['required', 'unique:clubs', 'max:255'],
