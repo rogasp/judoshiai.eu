@@ -44,7 +44,8 @@
                             <td>
                                 <a class="btn btn-link" href="{{ route('clubs.show',
                                     ['club' => $club->id]) }}">Show</a>
-                                <a class="btn btn-link" href="#">Edit</a>
+                                <a class="btn btn-link" href="{{ route('clubs.edit',
+                                    ['club' => $club->id]) }}">Edit</a>
                                 <form class="d-inline" method="POST" action="#">
                                     @csrf
                                     @method('DELETE')

@@ -1,7 +1,6 @@
-# judoshiai.eu [![StyleCI](https://github.styleci.io/repos/282250229/shield?branch=master)](https://github.styleci.io/repos/282250229?branch=master) [![Build Status](https://travis-ci.com/rogasp/judoshiai.eu.svg?branch=master)](https://travis-ci.com/rogasp/judoshiai.eu)
+# judoshiai.eu [![StyleCI](https://github.styleci.io/repos/282250229/shield?branch=master)](https://github.styleci.io/repos/282250229?branch=master) [![Build Status](https://travis-ci.com/rogasp/judoshiai.eu.svg?branch=master)](https://travis-ci.com/rogasp/judoshiai.eu)  [![GitHub issues open](https://img.shields.io/github/issues/rogasp/judoshiai.eu.svg?maxAge=100)](https://github.com/rogasp/judoshiai.eu/issues) [![GitHub issues-closed](https://img.shields.io/github/issues-closed/rogasp/judoshiai.eu.svg)](https://GitHub.com/rogasp/judoshiai.eu/issues?q=is%3Aissue+is%3Aclosed) [![MIT license](https://img.shields.io/badge/License-MIT-blue.svg)](https://github.com/rogasp/judoshiai.eu/blob/master/LICENSE)
 
 The idea of this project is to develop a platform for managing competition activities for, primarily Judo competitions.
-
 Can be used for registration of competitions, contestants, live results, live streaming and finally also a complete competition system.
 
 Everyone is welcome to contribute and above all learn more about PHP, Laravel, MySql, Github etc.

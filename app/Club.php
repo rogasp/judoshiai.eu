@@ -24,6 +24,8 @@ class Club extends Model
         'user_id',
         'owner_id',
         'administrator_id',
+        'approved_at',
+        'activated_at',
     ];
 
     protected $with = [

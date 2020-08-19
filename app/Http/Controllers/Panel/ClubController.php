@@ -44,4 +44,21 @@ class ClubController extends Controller
                 'club' => $club,
             ]);
     }
+
+    public function update(ClubRequest $request, Club $club)
+    {
+        $club->update($request->validated());
+
+        return redirect()
+            ->route('clubs.index')
+            ->withSuccess("Club with id {$club->id} was updated");
+    }
+
+    public function edit(Club $club)
+    {
+        return view('panel.clubs.edit')
+            ->with([
+                'club' => $club,
+            ]);
+    }
 }
