@@ -29,7 +29,7 @@
             <!-- Admin link -->
             @if(Auth::user()->isAdmin())
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('login') }}"><i class="material-icons md-18">settings</i></a>
+                    <a class="nav-link" href="{{ route('admin') }}"><i class="material-icons md-18">settings</i></a>
                 </li>
             @endif
             <li class="nav-item dropdown">
