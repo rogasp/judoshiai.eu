@@ -2,7 +2,7 @@
 
 namespace App;
 
-use App\Http\Utilities\Country as Country;
+use App\Http\Utilities\Country;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 
