@@ -44,7 +44,7 @@ class ClubRequest extends FormRequest
                     'city' => 'max:100',
                     'country_code' => 'max:2',
                 ];
-            break;
+                break;
         }
 
 //        return [
