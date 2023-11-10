@@ -3,7 +3,7 @@
 /** @var \Illuminate\Database\Eloquent\Factory $factory */
 
 use App\Club;
-use App\Http\Utilities\Country as Country;
+use App\Http\Utilities\Country;
 use Faker\Generator as Faker;
 
 /*
